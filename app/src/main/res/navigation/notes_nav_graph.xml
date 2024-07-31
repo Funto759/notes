@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notes_nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.notes.ui.fragments.NotesFragment"
+        android:label="NotesFragment" >
+        <action
+            android:id="@+id/action_notesFragment_to_notes_Full_Page_Fragment"
+            app:destination="@id/notes_Full_Page_Fragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_notes_details_Fragment"
+            app:destination="@id/notes_details_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.notes.ui.fragments.TaskFragment"
+        android:label="TaskFragment" />
+    <fragment
+        android:id="@+id/notes_Full_Page_Fragment"
+        android:name="com.example.notes.ui.fragments.Notes_Full_Page_Fragment"
+        android:label="Notes_Full_Page_Fragment" >
+        <action
+            android:id="@+id/action_notes_Full_Page_Fragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notes_details_Fragment"
+        android:name="com.example.notes.ui.fragments.Notes_details_Fragment"
+        android:label="Notes_details_Fragment" >
+
+        <argument
+            android:name= "noteId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+</navigation>
